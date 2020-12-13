@@ -7,9 +7,10 @@ import { getToken } from '@/utils/auth' // get token from cookie
 import getPageTitle from '@/utils/get-page-title'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
-
+// 路由白名单
 const whiteList = ['/login', '/auth-redirect'] // no redirect whitelist
 
+// 全局路由守卫 beforeCreate 之前
 router.beforeEach(async(to, from, next) => {
   // start progress bar
   NProgress.start()

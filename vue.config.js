@@ -80,7 +80,17 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
-
+    config.when(process.env.NODE_ENV !== 'development',
+      /**
+       * config.devtool
+       *   source-map (适合开发调试)
+       *   eval （适合开发，打包速度最快）
+       *   cheap-source-map
+       * @returns {*|this}
+       * @param config
+       */
+      config => config.devtool('source-map')
+    )
     config
       .when(process.env.NODE_ENV !== 'development',
         config => {
@@ -88,7 +98,7 @@ module.exports = {
             .plugin('ScriptExtHtmlWebpackPlugin')
             .after('html')
             .use('script-ext-html-webpack-plugin', [{
-            // `runtime` must same as runtimeChunk name. default is `runtime`
+              // `runtime` must same as runtimeChunk name. default is `runtime`
               inline: /runtime\..*\.js$/
             }])
             .end()
