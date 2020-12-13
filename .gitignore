@@ -5,6 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 **/*.log
+# 快捷方式
+*.lnk
 
 tests/**/coverage/
 tests/e2e/reports
