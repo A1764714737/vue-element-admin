@@ -63,6 +63,7 @@ export default {
         callback()
       }
     }
+    // todo: 密码验证 需改为后台验证
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
         callback(new Error('密码不能小于6位'))

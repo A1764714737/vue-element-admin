@@ -15,7 +15,8 @@ export function isExternal(path) {
  * @returns {Boolean}
  */
 export function validUsername(str) {
-  const valid_map = ['admin', 'editor']
+  // todo: 验证用户名是否存在于数据库中 ，需改为从后台获取
+  const valid_map = ['admin', 'storefront', 'service']
   return valid_map.indexOf(str.trim()) >= 0
 }
 

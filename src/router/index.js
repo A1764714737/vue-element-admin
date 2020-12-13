@@ -78,8 +78,8 @@ export const constantRoutes = [
       {
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        name: 'dashboard',
+        meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
   }
@@ -91,29 +91,40 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
 
-  {
-    path: '/error',
+  { // 店面管理
+    path: '/storefront-manage ',
+    name: 'storefront',
     component: Layout,
-    redirect: 'noRedirect',
-    name: 'ErrorPages',
     meta: {
-      title: 'Error Pages',
-      icon: '404'
-    },
-    children: [
-      {
-        path: '401',
-        component: () => import('@/views/error-page/401'),
-        name: 'Page401',
-        meta: { title: '401', noCache: true }
-      },
-      {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
-        meta: { title: '404', noCache: true }
-      }
-    ]
+      title: '店面管理',
+      icon: 'dashboard',
+      affix: true,
+      roles: ['admin']
+    }
+  },
+
+  { // 客服管理
+    path: '/service-manage ',
+    name: 'service',
+    component: Layout,
+    meta: {
+      title: '客服管理',
+      icon: 'dashboard',
+      affix: true,
+      roles: ['admin', 'storefront']
+    }
+  },
+
+  { // 角色管理
+    path: '/role-manage ',
+    name: 'role',
+    component: Layout,
+    meta: {
+      title: '角色管理',
+      icon: 'dashboard',
+      affix: true,
+      roles: ['admin']
+    }
   },
 
   // 404 page must be placed at the end !!!

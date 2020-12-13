@@ -11,7 +11,7 @@ module.exports = {
    * @type {boolean} true | false
    * @description 页面标签 是否在 主页面中显示（侧边栏右侧的主页面）
    */
-  tagsView: true,
+  tagsView: false,
 
   /**
    * @type {boolean} true | false
